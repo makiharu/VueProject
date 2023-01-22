@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapによる繰り返し処理</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <div id="app">
+        <!-- 改行 -->
+        <pre>{{data.map((value, key)=>key + ':「' + value + '」').join('\n')}}</pre>
+    </div>
+    <script>
+        const data = ['WindowS', 'macOS', 'Linux', 'iOS', 'Andoroid']
+        const appdata = {
+            data() {
+                return {
+                    data: data
+            
+                }
+            }
+        }
+        Vue.createApp(appdata).mount('#app')
+    </script>
+</body>
+  
+</html>
