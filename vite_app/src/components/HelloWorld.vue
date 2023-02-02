@@ -1,14 +1,7 @@
 <template>
   <div class="alert alert-info">
     <h2>{{ title }}</h2>
-    <p>{{ message }}</p>
-    <hr />
-    <div>
-      <input class="form-control" type="text" v-model="input" />
-      <button class="btn btn-info mt-2" v-on:click="doAction">
-        HelloWorldコンポーネントClick
-      </button>
-    </div>
+    <p>{{ msg }}</p>
   </div>
 </template>
 
@@ -17,19 +10,10 @@ export default {
   name: "HelloWorld",
   props: {
     title: String,
-    message: String,
+    msg: String,
   },
-  data() {
-    return {
-      message: "お名前は？",
-      input: "no name",
-    };
-  },
-  methods: {
-    doAction() {
-      this.message = "こんにちは、" + this.input + "さん！";
-      this.$emit("result-event", this.input);
-    },
+  setup(props) {
+    console.log(props);
   },
 };
 </script>
